@@ -1,8 +1,8 @@
-package com.davidvazquez.user.userservice.controller;
+package com.davidvazquez.microservicesdemo.userservice.controller;
 
-import com.davidvazquez.user.userservice.entity.User;
-import com.davidvazquez.user.userservice.service.UserService;
-import com.davidvazquez.user.userservice.vo.UserWithDepartment;
+import com.davidvazquez.microservicesdemo.userservice.entity.User;
+import com.davidvazquez.microservicesdemo.userservice.service.UserService;
+import com.davidvazquez.microservicesdemo.userservice.vo.UserWithDepartment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

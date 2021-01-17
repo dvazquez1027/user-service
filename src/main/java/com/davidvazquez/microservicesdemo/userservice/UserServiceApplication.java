@@ -1,4 +1,4 @@
-package com.davidvazquez.user.userservice;
+package com.davidvazquez.microservicesdemo.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

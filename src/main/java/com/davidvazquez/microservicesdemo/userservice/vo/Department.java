@@ -1,4 +1,4 @@
-package com.davidvazquez.user.userservice.vo;
+package com.davidvazquez.microservicesdemo.userservice.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

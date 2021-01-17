@@ -1,6 +1,6 @@
-package com.davidvazquez.user.userservice.vo;
+package com.davidvazquez.microservicesdemo.userservice.vo;
 
-import com.davidvazquez.user.userservice.entity.User;
+import com.davidvazquez.microservicesdemo.userservice.entity.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

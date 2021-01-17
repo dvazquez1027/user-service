@@ -1,6 +1,6 @@
-package com.davidvazquez.user.userservice.repository;
+package com.davidvazquez.microservicesdemo.userservice.repository;
 
-import com.davidvazquez.user.userservice.entity.User;
+import com.davidvazquez.microservicesdemo.userservice.entity.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

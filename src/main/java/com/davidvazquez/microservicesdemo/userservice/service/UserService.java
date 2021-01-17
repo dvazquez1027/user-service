@@ -1,9 +1,9 @@
-package com.davidvazquez.user.userservice.service;
+package com.davidvazquez.microservicesdemo.userservice.service;
 
-import com.davidvazquez.user.userservice.entity.User;
-import com.davidvazquez.user.userservice.repository.UserRepository;
-import com.davidvazquez.user.userservice.vo.Department;
-import com.davidvazquez.user.userservice.vo.UserWithDepartment;
+import com.davidvazquez.microservicesdemo.userservice.entity.User;
+import com.davidvazquez.microservicesdemo.userservice.repository.UserRepository;
+import com.davidvazquez.microservicesdemo.userservice.vo.Department;
+import com.davidvazquez.microservicesdemo.userservice.vo.UserWithDepartment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

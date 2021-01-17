@@ -1,4 +1,4 @@
-package com.davidvazquez.user.userservice;
+package com.davidvazquez.microservicesdemo.userservice;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

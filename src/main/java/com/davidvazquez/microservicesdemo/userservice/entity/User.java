@@ -1,4 +1,4 @@
-package com.davidvazquez.user.userservice.entity;
+package com.davidvazquez.microservicesdemo.userservice.entity;
 
 import java.sql.Date;
 

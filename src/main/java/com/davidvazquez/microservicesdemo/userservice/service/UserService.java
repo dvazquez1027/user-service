@@ -30,7 +30,7 @@ public class UserService {
 
     public UserWithDepartment findByIdWithDepartment(Long userId) {
         User user = userRepository.findById(userId).get();
-        Department department = restTemplate.getForObject("http://localhost:9001/departments/" + user.getDepartmentId(), Department.class);
+        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(), Department.class);
         return new UserWithDepartment(user, department);
     }
 }

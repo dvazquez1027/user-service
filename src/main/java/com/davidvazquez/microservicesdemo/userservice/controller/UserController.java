@@ -2,7 +2,6 @@ package com.davidvazquez.microservicesdemo.userservice.controller;
 
 import com.davidvazquez.microservicesdemo.userservice.dto.UserDTO;
 import com.davidvazquez.microservicesdemo.userservice.dto.UserWithDepartmentDTO;
-import com.davidvazquez.microservicesdemo.userservice.entity.User;
 import com.davidvazquez.microservicesdemo.userservice.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;

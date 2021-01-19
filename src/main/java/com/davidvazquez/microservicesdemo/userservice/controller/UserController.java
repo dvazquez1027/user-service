@@ -1,8 +1,9 @@
 package com.davidvazquez.microservicesdemo.userservice.controller;
 
+import com.davidvazquez.microservicesdemo.userservice.dto.UserDTO;
+import com.davidvazquez.microservicesdemo.userservice.dto.UserWithDepartmentDTO;
 import com.davidvazquez.microservicesdemo.userservice.entity.User;
 import com.davidvazquez.microservicesdemo.userservice.service.UserService;
-import com.davidvazquez.microservicesdemo.userservice.vo.UserWithDepartment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,17 +24,17 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public User createUser(@RequestBody UserDTO user) {
         return userService.saveUser(user);
     }
 
     @GetMapping("/{id}")
-    public User readUser(@PathVariable("id") Long userId) {
+    public UserDTO readUser(@PathVariable("id") Long userId) {
         return userService.findUserById(userId);
     }
 
     @GetMapping("/{id}/department")
-    public UserWithDepartment readUserWithDepartment(@PathVariable("id") Long userId) {
+    public UserWithDepartmentDTO readUserWithDepartment(@PathVariable("id") Long userId) {
         return userService.findByIdWithDepartment(userId);
     }
 }

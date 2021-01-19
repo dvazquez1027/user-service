@@ -1,9 +1,10 @@
 package com.davidvazquez.microservicesdemo.userservice.service;
 
+import com.davidvazquez.microservicesdemo.userservice.dto.DepartmentDTO;
+import com.davidvazquez.microservicesdemo.userservice.dto.UserDTO;
+import com.davidvazquez.microservicesdemo.userservice.dto.UserWithDepartmentDTO;
 import com.davidvazquez.microservicesdemo.userservice.entity.User;
 import com.davidvazquez.microservicesdemo.userservice.repository.UserRepository;
-import com.davidvazquez.microservicesdemo.userservice.vo.Department;
-import com.davidvazquez.microservicesdemo.userservice.vo.UserWithDepartment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,17 +21,17 @@ public class UserService {
         this.restTemplate = restTemplate;
     }
 
-    public User saveUser(User user) {
-        return userRepository.save(user);
+    public User saveUser(UserDTO userDTO) {
+        return userRepository.save(UserDTO.toEntity(userDTO));
     }
 
-    public User findUserById(Long userId) {
-        return userRepository.findById(userId).get();
+    public UserDTO findUserById(Long userId) {
+        return UserDTO.fromEntity(userRepository.findById(userId).get());
     }
 
-    public UserWithDepartment findByIdWithDepartment(Long userId) {
+    public UserWithDepartmentDTO findByIdWithDepartment(Long userId) {
         User user = userRepository.findById(userId).get();
-        Department department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(), Department.class);
-        return new UserWithDepartment(user, department);
+        DepartmentDTO department = restTemplate.getForObject("http://DEPARTMENT-SERVICE/departments/" + user.getDepartmentId(), DepartmentDTO.class);
+        return new UserWithDepartmentDTO(UserDTO.fromEntity(user), department);
     }
 }

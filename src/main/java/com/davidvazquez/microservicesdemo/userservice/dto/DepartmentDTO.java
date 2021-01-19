@@ -1,13 +1,13 @@
-package com.davidvazquez.microservicesdemo.userservice.vo;
+package com.davidvazquez.microservicesdemo.userservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class Department {
+@AllArgsConstructor
+public class DepartmentDTO {
     private Long id;
     private String name;
     private String address;

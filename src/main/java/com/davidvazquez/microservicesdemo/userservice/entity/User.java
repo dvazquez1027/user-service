@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.davidvazquez.microservicesdemo.userservice.types.Gender;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,27 +18,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-    public enum Gender {
-        MALE("M", "Male"),
-        FEMALE("F", "Female");
-
-        private final String name;
-        private final String description;
-
-        private Gender(String name, String description) {
-            this.name = name;
-            this.description = description;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-    };
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

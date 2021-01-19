@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/users")
+@Slf4j
 public class UserController {
     private UserService userService;
 
@@ -24,17 +27,26 @@ public class UserController {
     }
 
     @PostMapping
-    public User createUser(@RequestBody UserDTO user) {
-        return userService.saveUser(user);
+    public UserDTO createUser(@RequestBody UserDTO user) {
+        log.info("Entering UserController.createUser");
+        UserDTO result = userService.saveUser(user);
+        log.info("Exiting UserController.createUser");
+        return result;
     }
 
     @GetMapping("/{id}")
     public UserDTO readUser(@PathVariable("id") Long userId) {
-        return userService.findUserById(userId);
+        log.info("Entering UserController.readUser");
+        UserDTO result = userService.findUserById(userId);
+        log.info("Exiting UserController.readUser");
+        return result;
     }
 
     @GetMapping("/{id}/department")
     public UserWithDepartmentDTO readUserWithDepartment(@PathVariable("id") Long userId) {
-        return userService.findByIdWithDepartment(userId);
+        log.info("Entering UserController.readUsreWithDepartment");
+        UserWithDepartmentDTO result = userService.findByIdWithDepartment(userId);
+        log.info("Exiting UserController.readUserWithDepartment");
+        return result;
     }
 }

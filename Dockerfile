@@ -9,5 +9,5 @@ FROM openjdk:11.0.9
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
 COPY --from=BUILD /tmp/target/user-service.war user-service.war
-EXPOSE 9001
+EXPOSE 9002
 ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar user-service.war

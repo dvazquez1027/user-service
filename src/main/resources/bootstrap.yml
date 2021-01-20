@@ -1,5 +1,14 @@
 spring:
+    application:
+        name: USER-SERVICE
     cloud:
         config:
             enabled: true
-            uri: http://localhost:9292
+            uri: ${SPRING_CONFIG_URI:http://localhost:9292}
+            label: ${SPRING_CONFIG_LABEL:main}
+            fail-fast: true
+            retry:
+                multiplier: 3.0
+                max-interval: 10000
+
+
